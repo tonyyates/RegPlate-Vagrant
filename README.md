@@ -15,7 +15,7 @@ Vagrant setup for developing RegPlate
 - Clone this repo `git clone git@bitbucket.org:TonyYates/RegPlate-vagrant.git`
 - Edit the `Vagrantfile` in the root
 - Change your `RegPlateSourcePath` to match point to where your source code for RegPlate is on your host machine environment
-- Add RegPlateweb to your machines hostfile `sudo sh -c 'echo "192.168.33.100 RegPlateweb" >> /etc/hosts'`
+- Add RegPlateweb to your machines hostfile `sudo sh -c 'echo "192.168.33.100 RegPlateWeb" >> /etc/hosts'`
 
 
 ## Updating Virtual Box Guest Additions
@@ -36,7 +36,7 @@ The packaged vagrant box from Ubuntu contains outdated Virtual Box Guest Additio
 - Change to the RegPlate source directory: `cd code/RegPlate/server`
 - Install dependencies: `npm install`
 - Run the RegPlate App: `node server.js` or `npm start`
-- From your host machine browse to http://RegPlateweb
+- From your host machine browse to http://RegPlateWeb
 
 ## Copyright & License
 MIT
