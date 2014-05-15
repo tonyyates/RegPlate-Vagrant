@@ -1,5 +1,5 @@
 
-class regplate($node_version = "v0.10.22") {
+class regplate($node_version = "v0.10.25") {
     # Add some default path values
     Exec { path => ['/usr/local/bin','/usr/local/sbin','/usr/bin/','/usr/sbin','/bin','/sbin', "/home/vagrant/nvm/${node_version}/bin"], }
 
@@ -11,8 +11,13 @@ class regplate($node_version = "v0.10.22") {
         require => [Class["essentials"]]
     }
 
+    # Install and setup mongodb  server
+    class { mongodb:
+        require => [Class["essentials"]]
+    }
+
     # Install node through NVM
-    class { 'nvm':
+    class { nvm:
         node_version => $node_version,
         require => [Class["essentials"]]
     }

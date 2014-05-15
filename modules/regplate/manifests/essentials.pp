@@ -26,10 +26,4 @@ class essentials {
   file { "/home/vagrant/software":
     ensure => "directory",
   }
-
-  #file { "/usr/local":
-  #  recurse => true,
-  #  group => "vagrant",
-  #  owner => "vagrant";
-  #}
 }

@@ -1,8 +1,8 @@
 # -*- mode: ruby -*-
 # vi: set ft=ruby :
 
-# NOTE: This should match your path to the RegPlate source
-RegPlateSourcePath = "../registrationplates-webui/"
+# NOTE: This should match your path to the regplate source
+regplateSourcePath = "../registrationplates-webui/"
 
 Vagrant.configure("2") do |config|
   # All Vagrant configuration is done here. The most common configuration
@@ -10,11 +10,11 @@ Vagrant.configure("2") do |config|
   # please see the online documentation at vagrantup.com.
 
   # Every Vagrant virtual environment requires a box to build off of.
-  config.vm.box = "raring64"
+  config.vm.box = "precise64"
 
   # The url from where the 'config.vm.box' box will be fetched if it
   # doesn't already exist on the user's system.
-  config.vm.box_url = "http://cloud-images.ubuntu.com/vagrant/raring/current/raring-server-cloudimg-amd64-vagrant-disk1.box"
+  config.vm.box_url = "http://cloud-images.ubuntu.com/vagrant/precise/current/precise-server-cloudimg-amd64-vagrant-disk1.box"
 
   # Create a forwarded port mapping which allows access to a specific port
   # within the machine from a port on the host machine. In the example below,
@@ -23,8 +23,8 @@ Vagrant.configure("2") do |config|
 
   # Create a private network, which allows host-only access to the machine
   # using a specific IP.
-  # TODO: Add a host entry to your hosts file; e.g. 192.168.33.10 local.tryghost.org
-  config.vm.network :private_network, ip: "192.168.33.100"
+  # TODO: Add a host entry to your hosts file; e.g. 192.168.33.110 local.regplate.org
+  config.vm.network :private_network, ip: "192.168.33.200"
 
   # Create a public network, which generally matched to bridged network.
   # Bridged networks make the machine appear as another physical device on
@@ -35,7 +35,7 @@ Vagrant.configure("2") do |config|
   # the path on the host to the actual folder. The second argument is
   # the path on the guest to mount the folder. And the optional third
   # argument is a set of non-required options.
-  config.vm.synced_folder RegPlateSourcePath, "/home/vagrant/code/RegPlate", :nfs => false
+  config.vm.synced_folder regplateSourcePath, "/home/vagrant/code/regplate", :nfs => false
 
   # Provider-specific configuration so you can fine-tune various
   # backing providers for Vagrant. These expose provider-specific options.
